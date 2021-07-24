@@ -1,0 +1,58 @@
+<!doctype html>
+<html>
+<head>
+  <title>Lawyer's dashboard</title>
+</head>
+
+<body>
+  <div>
+    <h1>Lawyer Dashboard</h1>
+    <a href="/meetings/create">+ Add meeting slot</a>
+  </div>
+
+  <% if (meetings.current.length > 0) { %>
+    <h3>Current meeting</h3>
+    <div>
+      <% for (var m of meetings.current) { %>
+        <% if (m.booked) { %>
+          <div>
+            <time><%= m.start_time %></time> -
+            <a href="/meetings/join/<%= m.id %>">Join meeting</a>
+          </div>
+        <% } else { %>
+          <div>
+            <time><%= m.start_time %></time> -
+            <span>Unclaimed</span>
+          </div>
+        <% } %>
+      <% } %>
+    </div>
+    <% } %>
+
+    <h3>Upcoming meetings</h3>
+
+<% if (meetings.upcoming.length > 0) { %>
+  <div>
+    <% for (var m of meetings.upcoming) { %>
+      <% if (m.booked) { %>
+        <div>
+          <time><%= m.start_time %></time> -
+          <span>Booked</span>
+        </div>
+      <% } else { %>
+        <div>
+          <time><%= m.start_time %><time> -
+          <span>Unclaimed</span>
+        </div>
+      <% } %>
+    <% } %>
+  </div>
+
+<% } else { %>
+
+  <p>You don't have any upcoming meetings. You can <a href="/meetings/create">create a meeting</a>.</p>
+
+<% } %>
+
+</body>
+</html>

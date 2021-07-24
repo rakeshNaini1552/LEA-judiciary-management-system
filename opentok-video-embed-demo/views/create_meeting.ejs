@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+<head>
+  <title>Create meeting slot</title>
+  <link rel="stylesheet" type="text/css" href="/css/flatpickr.min.css">
+</head>
+
+<body>
+  <h1>Create meeting slot</h1>
+
+  <p>Meeting slots that you create here can be booked by Clients.</p>
+
+  <form method="POST">
+
+    <div>
+      <label for="field-start_date">Start date and time</label>
+      <input id="field-start_date" type="date" class="start_date_input" autocomplete="off" name="start_date" maxlength="64" autofocus required>
+    </div>
+
+    <div>
+      <label for="field-duration">Duration (minutes)</label>
+      <input id="field-duration" type="number" autocomplete="off" name="duration" maxlength="2" required value="15">
+    </div>
+
+    <div>
+      <input type="submit" value="Create">
+      <a href="/dashboard/lawyer">Cancel</a>
+    </div>
+
+  </form>
+  <script src="/js/flatpickr.min.js"></script>
+  <script src="/js/scheduling_ui.js"></script>
+</body>
+</html>
