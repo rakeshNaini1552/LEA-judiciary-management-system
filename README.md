@@ -1,4 +1,4 @@
-# LEA  
+# LEA Judiciary management system  
 The main idea is to provide online  interaction to both client and lawyer through our web application. Client can choose lawyers based on the case.  
 We  came across  software solution for smart and efficient judiciary interactive system. That covers  
      1.facility for presentation to all attendees.  
